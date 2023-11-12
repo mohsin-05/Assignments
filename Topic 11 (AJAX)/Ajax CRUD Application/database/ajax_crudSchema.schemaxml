@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">ajax_crud</database>
+</source>
+<canvas zoom="170">
+<tables>
+<table name="posts" view="standard">
+<left>310</left>
+<top>177</top>
+<width>362</width>
+<height>248</height>
+<sql_create_table>CREATE TABLE `posts` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) DEFAULT NULL,
+  `summary` varchar(300) DEFAULT NULL,
+  `description` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

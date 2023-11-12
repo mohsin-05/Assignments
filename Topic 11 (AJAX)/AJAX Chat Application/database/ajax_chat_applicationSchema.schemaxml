@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">ajax_chat_application</database>
+</source>
+<canvas zoom="150">
+<tables>
+<table name="chat_messages" view="standard">
+<left>42</left>
+<top>117</top>
+<width>354</width>
+<height>219</height>
+<sql_create_table>CREATE TABLE `chat_messages` (
+  `chat_message` int(11) NOT NULL AUTO_INCREMENT,
+  `message` varchar(300) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `time` varchar(100) NOT NULL,
+  PRIMARY KEY (`chat_message`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `chat_messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="users" view="standard">
+<left>540</left>
+<top>163</top>
+<width>332</width>
+<height>296</height>
+<sql_create_table>CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `profile` varchar(100) NOT NULL,
+  `is_online` int(11) DEFAULT 0,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

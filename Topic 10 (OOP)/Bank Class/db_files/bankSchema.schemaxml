@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">bank</database>
+</source>
+<canvas zoom="170">
+<tables>
+<table name="users_info" view="standard">
+<left>300</left>
+<top>160</top>
+<width>478</width>
+<height>306</height>
+<sql_create_table>CREATE TABLE `users_info` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone_number` varchar(100) NOT NULL,
+  `bank_account_number` int(100) NOT NULL,
+  `bank_balance` int(100) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

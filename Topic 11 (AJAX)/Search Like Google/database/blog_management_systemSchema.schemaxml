@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">blog_management_system</database>
+</source>
+<canvas zoom="150">
+<tables>
+<table name="posts" view="standard">
+<left>272</left>
+<top>153</top>
+<width>524</width>
+<height>245</height>
+<sql_create_table>CREATE TABLE `posts` (
+  `post_id` int(11) NOT NULL AUTO_INCREMENT,
+  `added_by_user_role_id` int(11) DEFAULT NULL,
+  `post_title` text DEFAULT NULL,
+  `post_description` longtext DEFAULT NULL,
+  `is_active` enum('Active','Inactive') DEFAULT 'Active',
+  PRIMARY KEY (`post_id`),
+  KEY `author_user_role_id` (`added_by_user_role_id`),
+  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`added_by_user_role_id`) REFERENCES `user_role` (`user_role_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

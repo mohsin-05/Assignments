@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">joins_assignment</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="persons" view="standard">
+<left>315</left>
+<top>282</top>
+<width>257</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `persons` (
+  `person_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  `gender` enum('Male','Female') DEFAULT NULL,
+  PRIMARY KEY (`person_id`),
+  CONSTRAINT `persons_ibfk_1` FOREIGN KEY (`person_id`) REFERENCES `movies` (`person_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="tickets" view="standard">
+<left>112</left>
+<top>138</top>
+<width>180</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `tickets` (
+  `ticket_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ticket_price` int(11) NOT NULL,
+  `ticket_tier` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ticket_id`),
+  CONSTRAINT `tickets_ibfk_1` FOREIGN KEY (`ticket_id`) REFERENCES `persons` (`person_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="halls" view="standard">
+<left>741</left>
+<top>329</top>
+<width>170</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `halls` (
+  `hall_id` int(11) NOT NULL AUTO_INCREMENT,
+  `movie_id` int(11) DEFAULT NULL,
+  `seats` int(11) DEFAULT NULL,
+  `tier` int(11) NOT NULL,
+  PRIMARY KEY (`hall_id`),
+  KEY `movie_id` (`movie_id`),
+  CONSTRAINT `halls_ibfk_1` FOREIGN KEY (`hall_id`) REFERENCES `movies` (`hall_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="movies" view="colnames">
+<left>597</left>
+<top>146</top>
+<width>120</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `movies` (
+  `movie_id` int(11) NOT NULL AUTO_INCREMENT,
+  `hall_id` int(11) DEFAULT NULL,
+  `person_id` int(11) DEFAULT NULL,
+  `movie_name` varchar(25) NOT NULL,
+  `time` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`movie_id`),
+  KEY `hall_id` (`hall_id`),
+  KEY `person_id` (`person_id`),
+  CONSTRAINT `movies_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `halls` (`movie_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

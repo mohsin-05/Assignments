@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">job_portal_system</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="academic_information" view="standard">
+<left>36</left>
+<top>176</top>
+<width>192</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `academic_information` (
+  `acad_info_id` int(11) NOT NULL AUTO_INCREMENT,
+  `candidate_id` int(11) NOT NULL,
+  PRIMARY KEY (`acad_info_id`),
+  KEY `candidate_id` (`candidate_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="candidates" view="standard">
+<left>281</left>
+<top>291</top>
+<width>239</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `candidates` (
+  `candidate_id` int(11) NOT NULL AUTO_INCREMENT,
+  `candidate_name` varchar(25) NOT NULL,
+  PRIMARY KEY (`candidate_id`),
+  CONSTRAINT `candidates_ibfk_1` FOREIGN KEY (`candidate_id`) REFERENCES `academic_information` (`candidate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `candidates_ibfk_2` FOREIGN KEY (`candidate_id`) REFERENCES `professional_skills` (`candidate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `candidates_ibfk_3` FOREIGN KEY (`candidate_id`) REFERENCES `professional_qualifications` (`candidate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `candidates_ibfk_4` FOREIGN KEY (`candidate_id`) REFERENCES `work_experiences` (`candidate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `candidates_ibfk_5` FOREIGN KEY (`candidate_id`) REFERENCES `candidate_job` (`candidate_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="company" view="standard">
+<left>298</left>
+<top>110</top>
+<width>225</width>
+<height>106</height>
+<sql_create_table>CREATE TABLE `company` (
+  `company_id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(25) NOT NULL,
+  PRIMARY KEY (`company_id`),
+  CONSTRAINT `company_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company_contact_numbers` (`company_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `company_ibfk_2` FOREIGN KEY (`company_id`) REFERENCES `job_applications_status` (`company_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `company_ibfk_3` FOREIGN KEY (`company_id`) REFERENCES `jobs` (`company_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="job_applications" view="standard">
+<left>922</left>
+<top>78</top>
+<width>181</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `job_applications` (
+  `job_appl_id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_id` int(11) NOT NULL,
+  PRIMARY KEY (`job_appl_id`),
+  KEY `job_id` (`job_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="job_applications_status" view="standard">
+<left>603</left>
+<top>138</top>
+<width>210</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `job_applications_status` (
+  `job_appl_stat_id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  PRIMARY KEY (`job_appl_stat_id`),
+  KEY `company_id` (`company_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="jobs" view="standard">
+<left>694</left>
+<top>275</top>
+<width>204</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `jobs` (
+  `job_id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_name` varchar(25) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  PRIMARY KEY (`job_id`),
+  KEY `company_id` (`company_id`),
+  CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `job_applications` (`job_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `jobs_ibfk_2` FOREIGN KEY (`job_id`) REFERENCES `candidate_job` (`job_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="professional_qualifications" view="standard">
+<left>53</left>
+<top>24</top>
+<width>193</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `professional_qualifications` (
+  `pro_qual_id` int(11) NOT NULL AUTO_INCREMENT,
+  `candidate_id` int(11) NOT NULL,
+  PRIMARY KEY (`pro_qual_id`),
+  KEY `candidate_id` (`candidate_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="professional_skills" view="standard">
+<left>26</left>
+<top>308</top>
+<width>179</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `professional_skills` (
+  `pro_skill_id` int(11) NOT NULL AUTO_INCREMENT,
+  `candidate_id` int(11) NOT NULL,
+  PRIMARY KEY (`pro_skill_id`),
+  KEY `candidate_id` (`candidate_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="work_experiences" view="standard">
+<left>33</left>
+<top>448</top>
+<width>197</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `work_experiences` (
+  `work_exp_id` int(11) NOT NULL AUTO_INCREMENT,
+  `candidate_id` int(11) NOT NULL,
+  PRIMARY KEY (`work_exp_id`),
+  KEY `candidate_id` (`candidate_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="company_contact_numbers" view="standard">
+<left>600</left>
+<top>6</top>
+<width>206</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `company_contact_numbers` (
+  `com_con_num_id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  PRIMARY KEY (`com_con_num_id`),
+  KEY `company_id` (`company_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="candidate_job" view="standard">
+<left>520</left>
+<top>503</top>
+<width>212</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `candidate_job` (
+  `candidate_job_id` int(11) NOT NULL AUTO_INCREMENT,
+  `candidate_id` int(11) NOT NULL,
+  `job_id` int(11) NOT NULL,
+  PRIMARY KEY (`candidate_job_id`),
+  KEY `candidate_id` (`candidate_id`),
+  KEY `job_id` (`job_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

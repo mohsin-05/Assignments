@@ -1,0 +1,287 @@
+CREATE DATABASE solar_system;
+SHOW DATABASES;
+USE solar_system;
+CREATE TABLE sun( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE mercury( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE venus( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE earth( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE mars( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE jupiter( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE saturn( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE uranus( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE neptune( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));
+
+CREATE TABLE pluto( Size VARCHAR(15),
+-> Temperature INT(5),
+-> Position VARCHAR(10));  
+
+SHOW TABLES; 
+
+DESC sun; DESC mercury;
+DESC venus; DESC earth;
+DESC mars; DESC jupiter;
+DESC saturn; DESC uranus;
+DESC neptune; DESC pluto;
+DROP DATABASE solar_system;
+
+
+
+
+
+CREATE DATABASE Countries;
+SHOW DATABASES;
+USE countries;
+CREATE TABLE Pakistan( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Afghanistan( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Iran( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Iraq( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Saudi_Arabia( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Malaysia( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Indonesia( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Palestine( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE UAE( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10));
+
+CREATE TABLE Egypt( Population INT(15),
+-> Size INT(10),
+-> National Language VARCHAR(10)); 
+
+SHOW TABLES;
+
+DESC Pakistan;
+
+DESC Afghanistan;
+
+DESC Iran;
+
+DESC Iraq;
+
+DESC Saudi_Arabia;
+
+DESC Malaysia;
+
+DESC Indonesia;
+
+DESC Palestine;
+
+DESC UAE;
+
+DESC Egypt;
+
+DROP DATABASE countries;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE DATABASE Languages;
+SHOW DATABASES;
+USE Languages;
+CREATE TABLE Urdu( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Sindhi( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Punjabi( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Pashto( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Saraiki( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Balochi( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Brahui( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Hindko( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE Arabic( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+CREATE TABLE English( Alphabet VARCHAR(8),
+-> Native_Speakers VARCHAR(12),
+-> Non_Native_Speakers VARCHAR(12));
+
+SHOW TABLES;
+
+DESC Urdu;
+
+DESC Sindhi;
+
+DESC Punjabi;
+
+DESC Pashto;
+
+DESC Saraiki;
+
+DESC Balochi;
+
+DESC Brahui;
+
+DESC Hindko;
+
+DESC Arabic;
+
+DESC English;
+
+DROP DATABASE languages;
+
+
+
+
+
+
+
+CREATE DATABASE Businesses;
+SHOW DATABASES;
+USE Businesses;
+CREATE TABLE Farming( Expenditure INT(7),
+-> Revenue INT(7),
+-> Profit INT(7));
+
+SHOW TABLES;
+
+DESC Farming;
+
+DESC Clothing;
+
+DESC Restaurants;
+
+DESC Hotels;
+
+DESC Footwear;
+
+DESC Furniture;
+
+DESC Shopkeeping;
+
+DESC Software;
+
+DESC Transportation;
+
+DESC Cooking;
+
+DROP DATABASE Businesses;
+
+
+
+
+
+
+
+
+CREATE DATABASE Transportation;
+SHOW DATABASES;
+USE Transportation;
+CREATE TABLE Bike( Cost INT(5),
+-> Milage INT(5),
+-> Travel_Time INT(5));
+
+SHOW TABLES;
+
+DESC Bike;
+
+DESC Car;
+
+DESC Bus;
+
+DESC Van;
+
+DESC Coach;
+
+DESC Truck;
+
+DESC Rikshaw;
+
+DESC Chingchi;
+
+DESC Taxi;
+
+DESC Dom;
+
+DROP DATABASE Transportation;
+
+
+
+
+
+
+

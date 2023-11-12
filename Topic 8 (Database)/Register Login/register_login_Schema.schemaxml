@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">register_login</database>
+</source>
+<canvas zoom="230">
+<tables>
+<table name="users" view="standard">
+<left>242</left>
+<top>115</top>
+<width>621</width>
+<height>414</height>
+<sql_create_table>CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(25) NOT NULL,
+  `email` varchar(25) NOT NULL,
+  `address` varchar(25) NOT NULL,
+  `user_name` varchar(25) NOT NULL,
+  `password` varchar(25) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

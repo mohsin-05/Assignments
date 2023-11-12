@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">ajax_register</database>
+</source>
+<canvas zoom="150">
+<tables>
+<table name="users" view="standard">
+<left>312</left>
+<top>169</top>
+<width>356</width>
+<height>270</height>
+<sql_create_table>CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `user_password` int(11) DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

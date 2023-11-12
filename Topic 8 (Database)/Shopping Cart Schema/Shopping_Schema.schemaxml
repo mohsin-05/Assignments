@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">shopping</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="item" view="standard">
+<left>763</left>
+<top>332</top>
+<width>186</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `item` (
+  `item_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) DEFAULT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`item_id`),
+  CONSTRAINT `item_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `order_item` (`item_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="order_item" view="standard">
+<left>544</left>
+<top>185</top>
+<width>194</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `order_item` (
+  `order_item_id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`order_item_id`),
+  KEY `order_id` (`order_id`),
+  KEY `item_id` (`item_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="users" view="standard">
+<left>35</left>
+<top>166</top>
+<width>277</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `users` (
+  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  `gender` enum('Male','Female') DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `address` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`customer_id`),
+  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `orders` (`customer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="orders" view="standard">
+<left>337</left>
+<top>336</top>
+<width>184</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) DEFAULT NULL,
+  `order_date` date DEFAULT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `customer_id` (`customer_id`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order_item` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

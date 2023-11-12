@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">email_system</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="emails" view="standard">
+<left>177</left>
+<top>191</top>
+<width>322</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `emails` (
+  `email_id` int(11) NOT NULL AUTO_INCREMENT,
+  `to_user_id` int(11) DEFAULT NULL,
+  `from_user_id` int(11) DEFAULT NULL,
+  `subject` varchar(200) DEFAULT NULL,
+  `status` enum('Sent','Draft','Received','Deleted') DEFAULT NULL,
+  `message` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`email_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="users" view="standard">
+<left>551</left>
+<top>199</top>
+<width>212</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(100) DEFAULT NULL,
+  `last_name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
