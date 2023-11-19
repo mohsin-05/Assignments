@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">books_posts</database>
+</source>
+<canvas zoom="140">
+<tables>
+<table name="books" view="standard">
+<left>132</left>
+<top>153</top>
+<width>312</width>
+<height>204</height>
+<sql_create_table>CREATE TABLE `books` (
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+  `book_name` varchar(200) DEFAULT NULL,
+  `book_author` varchar(200) DEFAULT NULL,
+  `book_image` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+<table name="topics" view="standard">
+<left>627</left>
+<top>131</top>
+<width>346</width>
+<height>204</height>
+<sql_create_table>CREATE TABLE `topics` (
+  `topic_id` int(11) NOT NULL AUTO_INCREMENT,
+  `book_id` int(11) NOT NULL,
+  `topic_title` varchar(200) DEFAULT NULL,
+  `topic_description` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`topic_id`),
+  KEY `book_id` (`book_id`),
+  CONSTRAINT `topics_ibfk_1` FOREIGN KEY (`book_id`) REFERENCES `books` (`book_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

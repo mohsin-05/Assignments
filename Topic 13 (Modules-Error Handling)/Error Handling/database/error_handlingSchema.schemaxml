@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb4" collation="utf8mb4_general_ci">error_handling</database>
+</source>
+<canvas zoom="200">
+<tables>
+<table name="error_logs" view="standard">
+<left>240</left>
+<top>130</top>
+<width>480</width>
+<height>360</height>
+<sql_create_table>CREATE TABLE `error_logs` (
+  `error_id` int(11) NOT NULL AUTO_INCREMENT,
+  `error_time` varchar(100) NOT NULL,
+  `error_level` varchar(100) NOT NULL,
+  `error_message` varchar(300) NOT NULL,
+  `error_file` varchar(100) NOT NULL,
+  `error_line` varchar(100) NOT NULL,
+  PRIMARY KEY (`error_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

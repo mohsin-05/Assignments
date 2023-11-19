@@ -1,0 +1,26 @@
+	body{
+			background-image: radial-gradient(circle, blue, black);
+		}
+	h1{
+		background-image: radial-gradient(circle, hotpink, deeppink, darkred);
+		border: 2px solid darkred;
+		border-radius: 10px 25px;
+		margin: 10px 20px;
+		padding: 10px;
+		font-family: cursive;
+		color: navy;
+	}
+	fieldset{
+		width: 40%;
+		border: 3px dashed red;
+		border-radius: 18px;
+		background-image: radial-gradient(circle, violet, purple);
+	}
+	input{
+		border-radius: 7px;
+		border-color: red;
+		accent-color: red;
+	}
+	legend{
+		color: white;
+	}
